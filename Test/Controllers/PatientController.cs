@@ -1,13 +1,14 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Domain.Models.PatientModel;
 using Microsoft.AspNetCore.Mvc;
 using Services.Services.PatientServices;
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 
 namespace Test.Controllers
 {
+    /// <summary>
+    /// პაციენტები
+    /// </summary>
     [Route("Patient")]
     [ApiController]
     public class PatientController : ControllerBase
@@ -37,8 +38,11 @@ namespace Test.Controllers
         {
             try
             {
-                // 
-                return Ok();
+                var generalResponseModel = await _patientServices.PatientListGetAsync();
+                if (generalResponseModel.Status)
+                    return Ok(generalResponseModel.DatabaseObjectModel);
+
+                return BadRequest();
             }
             catch (Exception ex)
             {
@@ -69,7 +73,7 @@ namespace Test.Controllers
         /// </summary>
         /// <returns></returns>
         [HttpPost("Post")]
-        public async Task<IActionResult> Post()
+        public async Task<IActionResult> Post([FromBody] PatientRequestModel model)
         {
             try
             {

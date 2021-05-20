@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Domain.Models.GeneralResponseModel;
+using Domain.Models.PatientModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,5 +10,6 @@ namespace Services.Services.PatientServices
 {
     public interface IPatientServices
     {
+        public Task<GeneralResponseModel<IEnumerable<PatientResponseModel>>> PatientListGetAsync();
     }
 }

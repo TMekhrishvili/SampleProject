@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Domain.Models
+namespace Domain.Models.PatientModel
 {
-    public class PatientResponseModel
+    public class PatientRequestModel
     {
+        public int PatientID { get; set; }
     }
 }
