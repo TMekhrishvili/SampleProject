@@ -14,6 +14,5 @@ namespace Domain.Models.PatientModel
         public int GenderID { get; set; }
         public string Phone { get; set; }
         public string Address { get; set; }
-
     }
 }

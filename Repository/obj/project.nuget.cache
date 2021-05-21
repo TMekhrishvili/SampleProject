@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "s7AZcua/S7oP6eHDoWg58+6WlV3nph40gsjPAYbETD0K0i/22neJyEfm4IEffLLZOHO9JSZ888VdlmW+AmVxnA==",
+  "dgSpecHash": "pp35+JzIt5UhkoD4ZIHBvMhrtdNfr5QCbdt0D7lqpWnHdpNJcAivBVZ8gHB7ZyDKZV855q+P0aWS1Htnr46xAA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Office1\\Desktop\\netTest\\SampleProject\\Repository\\Repository.csproj",
+  "projectFilePath": "C:\\Users\\Office1\\Desktop\\MedsoftCRUD\\server\\Repository\\Repository.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Office1\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\Office1\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\5.0.0\\microsoft.extensions.dependencyinjection.abstractions.5.0.0.nupkg.sha512",

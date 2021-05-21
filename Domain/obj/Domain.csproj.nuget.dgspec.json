@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Office1\\Desktop\\netTest\\SampleProject\\Domain\\Domain.csproj": {}
+    "C:\\Users\\Office1\\Desktop\\MedsoftCRUD\\server\\Domain\\Domain.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Office1\\Desktop\\netTest\\SampleProject\\Domain\\Domain.csproj": {
+    "C:\\Users\\Office1\\Desktop\\MedsoftCRUD\\server\\Domain\\Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Office1\\Desktop\\netTest\\SampleProject\\Domain\\Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Office1\\Desktop\\MedsoftCRUD\\server\\Domain\\Domain.csproj",
         "projectName": "Domain",
-        "projectPath": "C:\\Users\\Office1\\Desktop\\netTest\\SampleProject\\Domain\\Domain.csproj",
+        "projectPath": "C:\\Users\\Office1\\Desktop\\MedsoftCRUD\\server\\Domain\\Domain.csproj",
         "packagesPath": "C:\\Users\\Office1\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Office1\\Desktop\\netTest\\SampleProject\\Domain\\obj\\",
+        "outputPath": "C:\\Users\\Office1\\Desktop\\MedsoftCRUD\\server\\Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages",

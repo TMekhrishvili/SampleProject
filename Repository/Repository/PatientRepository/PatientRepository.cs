@@ -32,19 +32,88 @@ namespace Repository.Repository.PatientRepository
         /// პაციენტების სია
         /// </summary>
         /// <returns></returns>
-        public async Task<IEnumerable<PatientResponseModel>> PatientListGetAsync()
+        public async Task<IEnumerable<PatientResponseModel>> ListGet()
         {
             IEnumerable<PatientResponseModel> response = new List<PatientResponseModel>();
             using (var connection = new SqlConnection(_connectionStrings.DBConnectionString))
             {
                 connection.Open();
-                var queryParameters = new DynamicParameters();
                 response = await connection.QueryAsync<PatientResponseModel>("",
                     commandType: CommandType.StoredProcedure);
             }
             return response.ToList();
         }
 
+        /// <summary>
+        /// პაციენტის შესახებ ინფორმაცია
+        /// </summary>
+        /// <param name="PatientID"></param>
+        /// <returns></returns>
+        public async Task<PatientResponseModel> Get(int PatientID)
+        {
+            var response = new PatientResponseModel();
+            using (var connection = new SqlConnection(_connectionStrings.DBConnectionString))
+            {
+                connection.Open();
+                var queryParameters = new DynamicParameters();
+                queryParameters.Add("@PatientID", PatientID);
+                response = await connection.QuerySingleOrDefaultAsync<PatientResponseModel>("",
+                    queryParameters,
+                    null,
+                    200,
+                    CommandType.StoredProcedure);
+            }
+            return response;
+        }
+
+        /// <summary>
+        /// პაციენტის შენახვა
+        /// </summary>
+        /// <param name="PatientID"></param>
+        /// <returns></returns>
+        public async Task<int> Post(PatientRequestModel model)
+        {
+            int response;
+            using (var connection = new SqlConnection(_connectionStrings.DBConnectionString))
+            {
+                connection.Open();
+                var queryParameters = new DynamicParameters();
+                queryParameters.Add("@ID", model.ID);
+                queryParameters.Add("@FullName", model.FullName);
+                queryParameters.Add("@Dob", model.Dob);
+                queryParameters.Add("@GenderID", model.GenderID);
+                queryParameters.Add("@Phone", model.Phone);
+                queryParameters.Add("@Address", model.Address);
+                response = await connection.ExecuteScalarAsync<int>("",
+                            queryParameters,
+                            null,
+                            200,
+                            CommandType.StoredProcedure);
+            }
+            return response;
+        }
+
+        /// <summary>
+        /// პაციენტის წაშლა
+        /// </summary>
+        /// <param name="PatientID"></param>
+        /// <returns></returns>
+        public async Task<bool> Delete(int PatientID)
+        {
+            bool response;
+            using (var connection = new SqlConnection(_connectionStrings.DBConnectionString))
+            {
+                connection.Open();
+                var queryParameters = new DynamicParameters();
+                queryParameters.Add("@PatientID", PatientID);
+                response = await connection.ExecuteScalarAsync<bool>("",
+                    queryParameters,
+                    null,
+                    200,
+                    CommandType.StoredProcedure);
+            }
+            return response;
+        }
         #endregion
     }
 }

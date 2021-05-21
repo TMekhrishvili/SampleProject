@@ -31,12 +31,78 @@ namespace Services.Services.PatientServices
         /// პაციენტების სია
         /// </summary>
         /// <returns></returns>
-        public async Task<GeneralResponseModel<IEnumerable<PatientResponseModel>>> PatientListGetAsync()
+        public async Task<GeneralResponseModel<IEnumerable<PatientResponseModel>>> ListGet()
         {
             var response = new GeneralResponseModel<IEnumerable<PatientResponseModel>>();
             try
             {
-                response.DatabaseObjectModel = await _patientRepository.PatientListGetAsync();
+                response.DatabaseObjectModel = await _patientRepository.ListGet();
+                response.Status = true;
+                response.Message = "Success";
+            }
+            catch (Exception ex)
+            {
+                response.Status = false;
+                response.Message = "Error: " + ex.Message;
+            }
+            return response;
+        }
+
+        /// <summary>
+        /// პაციენტის შესახებ ინფორმაცია
+        /// </summary>
+        /// <param name="PatientID"></param>
+        /// <returns></returns>
+        public async Task<GeneralResponseModel<PatientResponseModel>> Get(int PatientID)
+        {
+            var response = new GeneralResponseModel<PatientResponseModel>();
+            try
+            {
+                response.DatabaseObjectModel = await _patientRepository.Get(PatientID);
+                response.Status = true;
+                response.Message = "Success";
+            }
+            catch (Exception ex)
+            {
+                response.Status = false;
+                response.Message = "Error: " + ex.Message;
+            }
+            return response;
+        }
+
+        /// <summary>
+        /// პაციენტის შენახვა
+        /// </summary>
+        /// <param name="PatientID"></param>
+        /// <returns></returns>
+        public async Task<GeneralResponseModel<int>> Post(PatientRequestModel model)
+        {
+            var response = new GeneralResponseModel<int>();
+            try
+            {
+                response.DatabaseObjectModel = await _patientRepository.Post(model);
+                response.Status = true;
+                response.Message = "Success";
+            }
+            catch (Exception ex)
+            {
+                response.Status = false;
+                response.Message = "Error: " + ex.Message;
+            }
+            return response;
+        }
+
+        /// <summary>
+        /// პაციენტის წაშლა
+        /// </summary>
+        /// <param name="PatientID"></param>
+        /// <returns></returns>
+        public async Task<GeneralResponseModel<Boolean>> Delete(int PatientID)
+        {
+            var response = new GeneralResponseModel<Boolean>();
+            try
+            {
+                response.DatabaseObjectModel = await _patientRepository.Delete(PatientID);
                 response.Status = true;
                 response.Message = "Success";
             }

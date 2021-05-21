@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0koD6V9P/XCMk+m2hf6oqg0NVQUDYH9p1VQZdhJTwwwGsez+HFTtvShBw7yUAuSltToCt0RdQ15a5uagPyf45g==",
+  "dgSpecHash": "4XynlAhU9x0zWQEfWE6YboNT7fHRpfFetdCmZ88WaBNZmIOejh46U0sfWz1GZi0l4jZnTO8YHwG7N+rQzWjVmw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Office1\\Desktop\\netTest\\SampleProject\\Test\\Test.csproj",
+  "projectFilePath": "C:\\Users\\Office1\\Desktop\\MedsoftCRUD\\server\\Test\\Test.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Office1\\.nuget\\packages\\dapper\\2.0.90\\dapper.2.0.90.nupkg.sha512",
     "C:\\Users\\Office1\\.nuget\\packages\\microsoft.extensions.apidescription.server\\3.0.0\\microsoft.extensions.apidescription.server.3.0.0.nupkg.sha512",

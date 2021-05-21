@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "tGooVHhzys3DlHAO2ry6Nl4uv/BNqb1FQVKuw7yG8NOr7HRSbqbhJtoEC+gKDzaoMIg4Zbqcb8QcAKBIaJ/DUA==",
+  "dgSpecHash": "XtLAYsLCkqGJ1yiPu8aTrVtBq+YOShlC/u8Zi6Ony3hzkRSZ72Mqglg454O7iKH9C8cjQ2jfWEq49hs/UJ+Zfw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Office1\\Desktop\\netTest\\SampleProject\\Domain\\Domain.csproj",
+  "projectFilePath": "C:\\Users\\Office1\\Desktop\\MedsoftCRUD\\server\\Domain\\Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

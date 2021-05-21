@@ -10,6 +10,9 @@ namespace Services.Services.PatientServices
 {
     public interface IPatientServices
     {
-        public Task<GeneralResponseModel<IEnumerable<PatientResponseModel>>> PatientListGetAsync();
+        public Task<GeneralResponseModel<IEnumerable<PatientResponseModel>>> ListGet();
+        public Task<GeneralResponseModel<PatientResponseModel>> Get(int PatientID);
+        public Task<GeneralResponseModel<int>> Post(PatientRequestModel model);
+        public Task<GeneralResponseModel<Boolean>> Delete(int PatientID);
     }
 }

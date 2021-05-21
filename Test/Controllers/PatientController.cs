@@ -38,7 +38,7 @@ namespace Test.Controllers
         {
             try
             {
-                var generalResponseModel = await _patientServices.PatientListGetAsync();
+                var generalResponseModel = await _patientServices.ListGet();
                 if (generalResponseModel.Status)
                     return Ok(generalResponseModel.DatabaseObjectModel);
 
@@ -59,8 +59,11 @@ namespace Test.Controllers
         {
             try
             {
-                // 
-                return Ok();
+                var generalResponseModel = await _patientServices.Get(PatientID);
+                if (generalResponseModel.Status)
+                    return Ok(generalResponseModel.DatabaseObjectModel);
+
+                return BadRequest();
             }
             catch (Exception ex)
             {
@@ -77,8 +80,11 @@ namespace Test.Controllers
         {
             try
             {
-                // 
-                return Ok();
+                var generalResponseModel = await _patientServices.Post(model);
+                if (generalResponseModel.Status)
+                    return Ok(generalResponseModel.DatabaseObjectModel);
+
+                return BadRequest();
             }
             catch (Exception ex)
             {
@@ -96,8 +102,11 @@ namespace Test.Controllers
         {
             try
             {
-                // 
-                return Ok();
+                var generalResponseModel = await _patientServices.Delete(PatientID);
+                if (generalResponseModel.Status)
+                    return Ok(generalResponseModel.DatabaseObjectModel);
+
+                return BadRequest();
             }
             catch (Exception ex)
             {

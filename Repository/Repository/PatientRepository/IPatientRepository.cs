@@ -9,6 +9,9 @@ namespace Repository.Repository.PatientRepository
 {
     public interface IPatientRepository
     {
-        public Task<IEnumerable<PatientResponseModel>> PatientListGetAsync();
+        public Task<IEnumerable<PatientResponseModel>> ListGet();
+        public Task<PatientResponseModel> Get(int PatientID);
+        public Task<int> Post(PatientRequestModel model);
+        public Task<bool> Delete(int PatientID);
     }
 }
