@@ -2,6 +2,7 @@
 using Domain.Models.Database;
 using Domain.Models.PatientModel;
 using Microsoft.Extensions.Options;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -38,7 +39,7 @@ namespace Repository.Repository.PatientRepository
             using (var connection = new SqlConnection(_connectionStrings.DBConnectionString))
             {
                 connection.Open();
-                response = await connection.QueryAsync<PatientResponseModel>("",
+                response = await connection.QueryAsync<PatientResponseModel>("dbo.PatientListGet",
                     commandType: CommandType.StoredProcedure);
             }
             return response.ToList();
@@ -57,7 +58,7 @@ namespace Repository.Repository.PatientRepository
                 connection.Open();
                 var queryParameters = new DynamicParameters();
                 queryParameters.Add("@PatientID", PatientID);
-                response = await connection.QuerySingleOrDefaultAsync<PatientResponseModel>("",
+                response = await connection.QuerySingleOrDefaultAsync<PatientResponseModel>("dbo.PatientGet",
                     queryParameters,
                     null,
                     200,
@@ -84,7 +85,7 @@ namespace Repository.Repository.PatientRepository
                 queryParameters.Add("@GenderID", model.GenderID);
                 queryParameters.Add("@Phone", model.Phone);
                 queryParameters.Add("@Address", model.Address);
-                response = await connection.ExecuteScalarAsync<int>("",
+                response = await connection.ExecuteScalarAsync<int>("dbo.PatientSet",
                             queryParameters,
                             null,
                             200,
@@ -100,19 +101,19 @@ namespace Repository.Repository.PatientRepository
         /// <returns></returns>
         public async Task<bool> Delete(int PatientID)
         {
-            bool response;
+            int response;
             using (var connection = new SqlConnection(_connectionStrings.DBConnectionString))
             {
                 connection.Open();
                 var queryParameters = new DynamicParameters();
                 queryParameters.Add("@PatientID", PatientID);
-                response = await connection.ExecuteScalarAsync<bool>("",
+                response = await connection.ExecuteAsync("dbo.PatientDelete",
                     queryParameters,
                     null,
                     200,
                     CommandType.StoredProcedure);
             }
-            return response;
+            return Convert.ToBoolean(response);
         }
         #endregion
     }
