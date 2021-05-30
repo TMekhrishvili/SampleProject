@@ -1,4 +1,5 @@
-﻿using Domain.Models.PatientModel;
+﻿using Attributes;
+using Domain.Models.PatientModel;
 using Microsoft.AspNetCore.Mvc;
 using Services.Services.PatientServices;
 using System;
@@ -10,6 +11,7 @@ namespace Test.Controllers
     /// პაციენტები
     /// </summary>
     [Route("Patient")]
+    [APIAuthentication]
     [ApiController]
     public class PatientController : ControllerBase
     {
@@ -40,7 +42,7 @@ namespace Test.Controllers
             {
                 var generalResponseModel = await _patientServices.ListGet();
                 if (generalResponseModel.Status)
-                    return Ok(generalResponseModel.DatabaseObjectModel);
+                    return Ok(generalResponseModel);
 
                 return BadRequest();
             }
@@ -61,7 +63,7 @@ namespace Test.Controllers
             {
                 var generalResponseModel = await _patientServices.Get(PatientID);
                 if (generalResponseModel.Status)
-                    return Ok(generalResponseModel.DatabaseObjectModel);
+                    return Ok(generalResponseModel);
 
                 return BadRequest();
             }
@@ -82,7 +84,7 @@ namespace Test.Controllers
             {
                 var generalResponseModel = await _patientServices.Post(model);
                 if (generalResponseModel.Status)
-                    return Ok(generalResponseModel.DatabaseObjectModel);
+                    return Ok(generalResponseModel);
 
                 return BadRequest();
             }
@@ -104,7 +106,7 @@ namespace Test.Controllers
             {
                 var generalResponseModel = await _patientServices.Delete(PatientID);
                 if (generalResponseModel.Status)
-                    return Ok(generalResponseModel.DatabaseObjectModel);
+                    return Ok(generalResponseModel);
 
                 return BadRequest();
             }

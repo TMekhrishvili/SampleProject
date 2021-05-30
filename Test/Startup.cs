@@ -8,7 +8,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using Repository.Repository.GenderRepository;
 using Repository.Repository.PatientRepository;
+using Services.Services.GenderServices;
 using Services.Services.PatientServices;
 using System;
 using System.Collections.Generic;
@@ -19,6 +21,7 @@ namespace Test
 {
     public class Startup
     {
+        readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -29,7 +32,14 @@ namespace Test
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            services.AddCors(options =>
+            {
+                options.AddPolicy(name: MyAllowSpecificOrigins,
+                                  builder =>
+                                  {
+                                      builder.WithOrigins("*").AllowAnyMethod().AllowAnyHeader().Build();
+                                  });
+            });
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {
@@ -37,6 +47,8 @@ namespace Test
             });
             services.AddTransient<IPatientServices, PatientServices>();
             services.AddTransient<IPatientRepository, PatientRepository>();
+            services.AddTransient<IGenderServices, GenderServices>();
+            services.AddTransient<IGenderRepository, GenderRepository>();
             services.Configure<ConnectionStrings>(Configuration.GetSection("ConnectionStrings"));
         }
 
@@ -49,7 +61,7 @@ namespace Test
                 app.UseSwagger();
                 app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "Test v1"));
             }
-
+            app.UseCors(MyAllowSpecificOrigins);
             app.UseHttpsRedirection();
 
             app.UseRouting();

@@ -1,0 +1,15 @@
+C:\Users\User\Desktop\medsoftCRUD\server\Attributes\obj\Debug\net5.0\Attributes.csprojAssemblyReference.cache
+C:\Users\User\Desktop\medsoftCRUD\server\Attributes\obj\Debug\net5.0\Attributes.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Desktop\medsoftCRUD\server\Attributes\obj\Debug\net5.0\Attributes.AssemblyInfoInputs.cache
+C:\Users\User\Desktop\medsoftCRUD\server\Attributes\obj\Debug\net5.0\Attributes.AssemblyInfo.cs
+C:\Users\User\Desktop\medsoftCRUD\server\Attributes\obj\Debug\net5.0\Attributes.csproj.CoreCompileInputs.cache
+C:\Users\User\Desktop\medsoftCRUD\server\Attributes\bin\Debug\net5.0\Attributes.deps.json
+C:\Users\User\Desktop\medsoftCRUD\server\Attributes\bin\Debug\net5.0\Attributes.dll
+C:\Users\User\Desktop\medsoftCRUD\server\Attributes\bin\Debug\net5.0\ref\Attributes.dll
+C:\Users\User\Desktop\medsoftCRUD\server\Attributes\bin\Debug\net5.0\Attributes.pdb
+C:\Users\User\Desktop\medsoftCRUD\server\Attributes\bin\Debug\net5.0\Domain.dll
+C:\Users\User\Desktop\medsoftCRUD\server\Attributes\bin\Debug\net5.0\Domain.pdb
+C:\Users\User\Desktop\medsoftCRUD\server\Attributes\obj\Debug\net5.0\Attributes.csproj.CopyComplete
+C:\Users\User\Desktop\medsoftCRUD\server\Attributes\obj\Debug\net5.0\Attributes.dll
+C:\Users\User\Desktop\medsoftCRUD\server\Attributes\obj\Debug\net5.0\ref\Attributes.dll
+C:\Users\User\Desktop\medsoftCRUD\server\Attributes\obj\Debug\net5.0\Attributes.pdb

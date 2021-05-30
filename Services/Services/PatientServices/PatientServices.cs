@@ -36,7 +36,7 @@ namespace Services.Services.PatientServices
             var response = new GeneralResponseModel<IEnumerable<PatientResponseModel>>();
             try
             {
-                response.DatabaseObjectModel = await _patientRepository.ListGet();
+                response.Data = await _patientRepository.ListGet();
                 response.Status = true;
                 response.Message = "Success";
             }
@@ -58,7 +58,7 @@ namespace Services.Services.PatientServices
             var response = new GeneralResponseModel<PatientResponseModel>();
             try
             {
-                response.DatabaseObjectModel = await _patientRepository.Get(PatientID);
+                response.Data = await _patientRepository.Get(PatientID);
                 response.Status = true;
                 response.Message = "Success";
             }
@@ -80,7 +80,7 @@ namespace Services.Services.PatientServices
             var response = new GeneralResponseModel<int>();
             try
             {
-                response.DatabaseObjectModel = await _patientRepository.Post(model);
+                response.Data = await _patientRepository.Post(model);
                 response.Status = true;
                 response.Message = "Success";
             }
@@ -102,7 +102,7 @@ namespace Services.Services.PatientServices
             var response = new GeneralResponseModel<Boolean>();
             try
             {
-                response.DatabaseObjectModel = await _patientRepository.Delete(PatientID);
+                response.Data = await _patientRepository.Delete(PatientID);
                 response.Status = true;
                 response.Message = "Success";
             }

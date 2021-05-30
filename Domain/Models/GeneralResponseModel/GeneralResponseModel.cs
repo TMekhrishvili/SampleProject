@@ -8,7 +8,7 @@ namespace Domain.Models.GeneralResponseModel
 {
     public class GeneralResponseModel<T>
     {
-        public T DatabaseObjectModel { get; set; }
+        public T Data { get; set; }
         public Boolean Status { get; set; }
         public string Message { get; set; }
     }
