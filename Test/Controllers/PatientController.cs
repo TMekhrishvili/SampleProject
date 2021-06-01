@@ -15,6 +15,7 @@ namespace Test.Controllers
     [ApiController]
     public class PatientController : ControllerBase
     {
+        // სატესტო ცვლილება
         #region Fields
         private readonly IPatientServices _patientServices;
         #endregion
